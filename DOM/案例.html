@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>案例</title>
+    <style>
+        .hide {
+            display: none;!important;
+        }
+        .show {
+            display: block;!important;
+        }
+        .jd {
+            width: 160px;
+            height: 170px;
+        }
+        ul {
+            margin:0;
+            padding:0;
+        }
+        li {
+            list-style-type: none;
+            float: left;
+            padding: 10px 10px 10px 0;
+        }
+        .claerfix {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!--切换图片-->
+    <!--<a href="javascript:;" id="change_pic">图片切换</a>-->
+    <!--<img src="images/jd1.png" alt="" class="pic" width="160px" height="170px">-->
+
+    <!--显示隐藏div-->
+    <!--<button id="btn">隐藏</button>-->
+    <!--<img src="images/jd1.png" class="jd">-->
+
+
+    <!--相册-->
+    <a href="#">注册</a>
+    <div>
+        <ul id="imagegallery" class="claerfix">
+            <li>
+                <a href="images/1.jpg" title="1">
+                    <img src="images/1-small.jpg" width="100px" alt="1">
+                </a>
+            </li>
+            <li>
+                <a href="images/2.jpg" title="2">
+                    <img src="images/2-small.jpg" width="100px" alt="2">
+                </a>
+            </li>
+            <li>
+                <a href="images/3.jpg" title="3">
+                    <img src="images/3-small.jpg" width="100px" alt="3">
+                </a>
+            </li>
+            <li>
+                <a href="images/4.jpg" title="4">
+                    <img src="images/4-small.jpg" width="100px" alt="4">
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <div>
+        <img src="images/placeholder.png" width="450px" id="ph">
+    </div>
+    <div>
+        <p id="des">请选择一张图片</p>
+    </div>
+
+</body>
+<script>
+//    切换图片
+//    var link=document.getElementById("change_pic");
+//    link.onclick = function(){
+//        var pic = document.getElementsByClassName("pic")[0];
+//        pic.setAttribute("src","images/jd2.png");
+//    }
+
+//     显示隐藏div
+//    var img = document.getElementsByTagName("img")[0];
+//    var btn = document.getElementById("btn");
+//    btn.onclick = function(){
+//        if(btn.innerHTML==="隐藏"){
+//            img.className +=" hide";
+//            btn.innerHTML="显示";
+//        }else{
+//            img.className +=" show";
+//            btn.innerHTML = "隐藏";
+//        }
+//    }
+
+//    相册
+    var ul = document.getElementById("imagegallery");
+    var aArr = ul.getElementsByTagName("a");
+    var img = document.getElementById("ph");
+    var des = document.getElementById("des");
+    for(var i=0;i<aArr.length;i++){
+        aArr[i].onclick = function(){
+            img.src= this.href;
+            des.innerHTML = this.title;
+
+            return false;
+        }
+    }
+
+
+
+
+
+</script>
+</html>
