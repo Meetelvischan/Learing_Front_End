@@ -18,7 +18,16 @@
 <script>
     var div =document.getElementById("box");
     div.onclick = function (){
-        alert(1);
+        div.style.width ="500px";
+        div.style.height ="500px";
+        div.style.backgroundColor = "pink";
+    }
+    div.onmouseover = function(){
+        div.style.backgroundColor="black";
+
+    }
+    div.onmouseout = function(){
+        div.style.backgroundColor="cadetblue";
     }
 </script>
 </html>
