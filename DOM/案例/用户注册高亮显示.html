@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高亮显示</title>
+    <style>
+        .right {
+            border:1px solid green;
+        }
+        .wrong {
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    用户名：<input type="text"><br><br>
+    密码：<input type="text">
+</body>
+<script>
+    var inp1=document.getElementsByTagName("input")[0];
+    var inp2=document.getElementsByTagName("input")[1];
+    inp1.onblur = function(){
+        if(this.value.length>=6 && this.value.length<=12){
+            this.className = "right";
+        }else{
+            this.className = "wrong";
+        }
+
+    }
+</script>
+</html>

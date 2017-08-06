@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隐藏二维码</title>
+    <style>
+        #box {
+            display: inline-block;
+            width: 205px;
+            
+            position: absolute;
+            right:0;
+            top: 50%;
+
+        }
+        #QRcode {
+
+            width: 149px;
+            height: 152px;
+            float: left;
+
+
+        }
+
+        #QRcode-small a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: url("../images/bgs.png") -159px -51px no-repeat;
+            float: right;
+
+        }
+        .hide {
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var link = document.getElementById("QRcode-small");
+            var img = document.getElementById("QRcode");
+            link.onmouseover = function(){
+                img.className = "show";
+            };
+            link.onmouseout = function(){
+                img.className = "hide";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="QRcode" class="hide"><img src="../images/QRcode.png" alt=""></div>
+        <div id="QRcode-small"><a href="#"></a></div>
+    </div>
+
+
+
+</body>
+</html>

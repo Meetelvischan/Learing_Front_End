@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取焦点</title>
+    <style>
+
+        button {
+            border-style: none;
+            background: cadetblue;
+            color: #fff;
+        }
+
+    </style>
+    <script>
+        window.onload = function(){
+            var inp = document.getElementsByTagName("input")[0];
+            inp.onfocus = function(){
+                this.value = "";
+                this.style.color="#000";
+            };
+            inp.onblur = function(){
+                this.value = "购买";
+                this.style.color = "#ccc";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    京东：<input type="text" value="购买" id="inp"> <button>搜索</button>
+</body>
+</html>

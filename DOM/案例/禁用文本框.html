@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>禁用文本框</title>
+    <style>
+        .login {
+            width: 400px;
+            height: 300px;
+            border:1px solid #000;
+            margin:100px auto;
+        }
+        #username {
+            width: 280px;
+            margin:20px auto;
+        }
+        #pwd {
+            width: 280px;
+            margin:0 auto;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var inp =document.getElementsByTagName("input")[0];
+            var btn =document.getElementsByTagName("button")[0];
+            btn.onclick = function(){
+                inp.disabled = true;
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="login">
+        <div id="username">用户名:<input type="text" value="Elvischan">&nbsp&nbsp<button>禁用</button></div>
+        <div id="pwd">密码:&nbsp&nbsp&nbsp&nbsp<input type="password"></div>
+        
+    </div>
+</body>
+</html>

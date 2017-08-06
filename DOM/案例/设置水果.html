@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置水果</title>
+</head>
+<body>
+    <button>选择梨</button>
+    <select name="" id="select">
+        <option value="0">香蕉</option>
+        <option value="1">苹果</option>
+        <option value="2">梨</option>
+        <option value="3">西瓜</option>
+    </select>
+
+</body>
+<script>
+    var btn = document.getElementsByTagName("button")[0];
+    var opt = document.getElementsByTagName("option")[2];
+    btn.onclick = function(){
+        opt.selected = "true";
+
+    }
+</script>
+</html>
