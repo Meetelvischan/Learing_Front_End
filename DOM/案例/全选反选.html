@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选反选</title>
+    <style>
+        .w {
+            margin:0 auto;
+        }
+        .table {
+            border-collapse: collapse;
+            border:1px solid black;
+            font-size: 14px;
+            text-align:center;
+        }
+        th,tr,td {
+            width:150px;
+            height: 30px;
+            border:1px solid #dadada;
+        }
+        thead {
+            background-color: #00a5de;
+            color: #fff;
+
+        }
+        tbody tr:hover {
+            background: #48bfde;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table class="table w">
+            <thead>
+                <tr>
+                    <th>全选&nbsp<input type="checkbox" id="check-all"></th>
+                    <th>菜名</th>
+                    <th>饭店</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>酸菜鱼</td>
+                <td>希尔顿大酒店</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>酸菜鱼</td>
+                <td>希尔顿大酒店</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>酸菜鱼</td>
+                <td>希尔顿大酒店</td>
+            </tr>
+            </tbody>
+
+
+        </table>
+    </div>
+</body>
+<script>
+    var inpAll = document.getElementById("check-all");
+    var inp = document.getElementsByTagName("input");
+
+
+//    inpAll.onclick =function(){
+//        if(inpAll.checked===true){
+//            for(var i=1;i<=inp.length;i++){
+//                inp[i].checked = true;
+//            }
+//        }else{
+//            for(var i=1;i<=inp.length;i++){
+//                inp[i].checked = false;
+//            }
+//        }
+//    }
+//    优化版；
+//    inpAll.onclick = function(){
+//        for(var i=1;i<inp.length;i++){
+//            inp[i].checked = this.checked;
+//        }
+//    };
+//    for(var i=1;i<inp.length;i++){
+//        inp[i].onclick = function(){
+//            var bool =true;
+//            for(var j=1;j<inp.length;j++){
+//                if(inp[j].checked===false){
+//                    bool = false;
+//                }
+//            }
+//            inpAll.checked = bool;
+//        };
+//
+//    }
+
+    inpAll.onclick = function(){
+        for(var i=1;i<inp.length;i++){
+            inp[i].checked = this.checked;
+        }
+    }
+    for(var i=1;i<inp.length;i++){
+        inp[i].onclick = function(){
+            for(var j=1;j<inp.length;j++){
+                var bool = true;
+                if(inp[j].checked===false){
+                    bool = false;
+                }
+                inpAll.checked = bool;
+            }
+        }
+    }
+
+
+
+</script>
+</html>

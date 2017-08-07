@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            margin:10px;
+            width: 100px;
+            height: 40px;
+            cursor: pointer;
+
+
+        }
+        .current {
+            background: #48bfde;
+        }
+    </style>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+</body>
+<script>
+    var btn = document.getElementsByTagName("button");
+    for(var i=0;i<btn.length;i++){
+        btn[i].onmouseover =function(){
+            this.className = "current";
+        }
+        btn[i].onmouseout = function(){
+            this.className = "";
+        }
+    }
+</script>
+</html>
