@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>访问关系</title>
+    <style>
+        li {
+            width: 100px;
+            height: 100px;
+            background: #48bfde;
+            margin:5px;
+            list-style-type: none;
+
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="box1"></li>
+        <li class="box2"></li>
+        <li class="box3"></li>
+        <li class="box4"></li>
+        <li class="box5"></li>
+    </ul>
+</body>
+<script>
+    var box2 = document.getElementsByClassName("box2")[0];
+    box2.parentNode.style.backgroundColor = "#dadada";
+
+    var box3 = document.getElementsByClassName("box3")[0];
+    box3.previousElementSibling.style.backgroundColor = "red";
+
+    console.log(box3.parentNode.childNodes);
+    var arr = box3.parentNode.childNodes;
+    for(var i=0;i<arr.length;i++){
+        if(arr[i].nodeType ===1){
+            console.log(arr[i]);
+        }
+    }
+
+</script>
+</html>

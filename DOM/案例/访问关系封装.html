@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>访问关系封装</title>
+    <style>
+        li {
+            width: 100px;
+            height: 100px;
+            background: #48bfde;
+            list-style-type: none;
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li id="box"></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+<script src="tools.js"></script>
+<script>
+////    访问父节点
+//    div.parentNode;
+//
+////    访问兄弟节点
+//    div.previousElementSibling;
+//    div.previousSibling;
+//    div.nextSibling;
+//    div.nextElementSibling;
+//
+////    访问单个子节点
+//    div.firstChild;
+//    div.firstElementChild;
+//    div.lastChild;
+//    div.lastElementChild;
+//
+//
+////获取所有的子节点
+//    div.childNodes;
+//    div.children;
+//
+////    获取指点的兄弟节点
+//    div.parentNode.children[index];
+//
+//    function fn(ele){
+//        var newArr =[];
+//        var arr = ele.parentNode.children;
+//        for(var i=0;i<arr.length;i++){
+//            if(arr[i] !==ele){
+//                newArr.push(arr[i]);
+//            }
+//        }
+//        return newArr;
+//    }
+
+    var box = document.getElementById("box");
+    var parent = box.parentNode;
+    getFirstNode(parent).style.backgroundColor = "pink";
+    getLastNode(parent).style.backgroundColor = "red";
+
+
+</script>
+
+
+</html>

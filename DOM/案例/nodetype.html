@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nodetype</title>
+</head>
+<body>
+    <div id="box">你好</div>
+</body>
+<script>
+    var ele = document.getElementById("box");
+    var att = ele.getAttributeNode("id");
+    var text = ele.firstChild;
+
+    console.log(ele.nodeType);//1元素节点
+    console.log(att.nodeType);//2属性节点
+    console.log(text.nodeType);//3文本节点
+
+
+    console.log(ele.nodeName);
+    console.log(att.nodeName);
+    console.log(text.nodeName);
+
+
+    console.log(ele.nodeValue);
+    console.log(att.nodeValue);
+    console.log(text.nodeValue);
+
+</script>
+</html>

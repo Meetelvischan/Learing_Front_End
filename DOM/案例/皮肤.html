@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            padding:0;
+            margin:0;
+            background: url("../images/5.jpg") no-repeat;
+
+        }
+        img {
+            width: 200px;
+
+            cursor: pointer;
+
+        }
+        #pics {
+            background: rgba(255,255,255,0.3);
+            height: 170px;
+            padding-top:30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="pics">
+        <img src="../images/5.jpg" >
+        <img src="../images/6.jpg" >
+        <img src="../images/7.jpg" >
+        <img src="../images/8.jpg" >
+        <img src="../images/9.jpg" >
+    </div>
+</body>
+<script>
+    var imgs = document.getElementsByTagName("img");
+    var body = document.getElementsByTagName("body")[0];
+    var address;
+    for(var i=0;i<imgs.length;i++){
+        imgs[i].onclick = function(){
+            address = "url("+this.src+")";
+            body.style.background = address;
+        }
+    }
+
+</script>
+</html>

@@ -20,4 +20,40 @@
   * 通过ID
   * 通过classname
   * 通过tagname
-* ​
+* 访问关系
+
+```javascript
+//    访问父节点
+    div.parentNode;
+
+//    访问兄弟节点
+    div.previousElementSibling;
+    div.previousSibling;
+    div.nextSibling;
+    div.nextElementSibling;
+
+//    访问单个子节点
+    div.firstChild;
+    div.firstElementChild;
+    div.lastChild;
+    div.lastElementChild;
+    
+```
+
+
+
+* 创建元素
+
+```javascript
+//第一种
+document.write();
+
+//第二种
+ul.innerHtml += "<li>这是一段文字</li>"
+
+//第三种
+document.creatElement("li")
+```
+
+
+
