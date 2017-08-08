@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select {
+            width: 100px;
+            height: 200px;
+            background: #dadada;
+
+        }
+    </style>
+</head>
+<body>
+    <select name="" id="sell1" size="8" multiple>
+        <option value="">苹果</option>
+        <option value="">梨</option>
+        <option value="">香蕉</option>
+        <option value="">桃子</option>
+    </select>
+    <button>>>></button>
+    <button><<<</button>
+    <button>></button>
+    <button><</button>
+    <select name="" id="sell2" size="8" multiple>
+
+    </select>
+</body>
+<script>
+    var sell1 = document.getElementById("sell1");
+    var sell2 = document.getElementById("sell2");
+    var btnAll = document.getElementsByTagName("button");
+
+    btnAll[0].onclick = function(){
+        var items = sell1.children;
+        for(var i=items.length-1;i>=0;i--){
+            sell2.appendChild(items[0]);
+        }
+    }
+    btnAll[1].onclick = function(){
+        var items = sell2.children;
+        for(var i=items.length-1;i>=0;i--){
+            sell1.appendChild(items[0]);
+        }
+    }
+    btnAll[2].onclick = function(){
+        var items = sell1.children;
+        for(var i=items.length-1;i>=0;i--){
+            if(items[i].selected ===true){
+                sell2.appendChild(items[i]);
+            }
+        }
+    }
+    btnAll[3].onclick = function(){
+        var items = sell2.children;
+        for(var i=items.length-1;i>=0;i--){
+            if(items[i].selected ===true){
+                sell1.appendChild(items[i]);
+            }
+        }
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索</title>
+    <style>
+        * {
+            padding:0;
+            margin:0;
+        }
+        .content {
+            width: 500px;
+            margin:50px auto;
+        }
+
+        input {
+            width: 200px;
+            height: 20px;
+
+        }
+        button {
+            background: #00a5de;
+            color: #fff;
+            width: 60px;
+            height: 20px;
+            border:none;
+            border-radius: 10px;
+        }
+
+        ul {
+            width: 201px;
+            border: 1px solid #dadada;
+            box-shadow: 0 0 8px 0 rgba(0,0,0,0.2);
+        }
+        li {
+            list-style-type: none;
+            text-align: center;
+            height: 20px;
+            width: 201px;
+        }
+        li:hover {
+            background: #48bfde;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="search">
+            <input type="text">
+            <button>搜索</button>
+        </div>
+        <div class="result"></div>
+
+    </div>
+</body>
+<script>
+    var arr = ["a","ab","c","b","abc"];
+    var box = document.getElementsByTagName("div")[0];
+    var inp = box.children[0].children[0];
+    var result = box.children[1];
+
+
+
+    inp.onkeyup = function(){
+        var newArr =[];
+        for(var i=0;i<arr.length;i++){
+            if(arr[i].indexOf(this.value)===0){
+                newArr.push("<li>"+arr[i]+"</li>");
+            }
+        }
+        var str = newArr.join("");
+
+        if(box.children[1].children[0]){
+            box.children[1].removeChild(box.children[1].children[0]);
+        }
+
+        if(this.value.length ===0 || newArr.length ===0){
+            return;
+        }
+
+        var ul = document.createElement("ul");
+        ul.innerHTML = str;
+        result.appendChild(ul);
+
+
+
+
+    }
+</script>
+</html>
