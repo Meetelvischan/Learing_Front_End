@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>体验动画</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #48bfde;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <button>动画</button>
+    <div class="box"></div>
+
+</body>
+<script>
+    var btn = document.getElementsByTagName("button")[0];
+    var box = document.getElementsByTagName("div")[0];
+
+//    闪动
+//    btn.onclick = function(){
+//        box.style.left = "500px";
+//    }
+    btn.onclick = function(){
+
+        var timmer = setInterval(function(){
+
+            box.style.left = box.offsetLeft +10 + "px";
+            if(box.offsetLeft>600){
+                clearInterval(timmer);
+            }
+
+        },100);
+
+
+    }
+
+</script>
+</html>
