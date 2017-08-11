@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>返回头部</title>
+    <style>
+        img {
+            position: fixed;
+            bottom:50px;
+            right:50px;
+            cursor: pointer;
+
+        }
+        div {
+            width: 1210px;
+            margin:100px auto;
+            text-align: center;
+            font:400 26px/35px "microsoft yahei";
+
+        }
+    </style>
+</head>
+<script src="封装scroll.js"></script>
+<script src="../动画封装.js"></script>
+<script>
+
+
+
+
+    window.onload = function(){
+        var img = document.getElementsByTagName("img")[0];
+        window.onscroll = function(){
+            if(scroll().top>200){
+                img.style.display ="block";
+            }else{
+                img.style.display = "none";
+            }
+            leader = scroll().top;
+        };
+        var timer =null;
+        var target = 0;//目标位置
+        var leader = 0;//当前位置
+        img.onclick = function(){
+//            window.scrollTo(0,0);
+            clearInterval(timer);
+            timer = setInterval(function(){
+                var step = (target-leader)/10;
+                step = step>0?Math.ceil(step):Math.floor(step);
+                leader +=step;
+                window.scrollTo(0,leader);
+                if(leader ===0){
+                    clearInterval(timer);
+                }
+
+            },50)
+        }
+    }
+</script>
+<body>
+    <img src="images/Top.jpg" style="display: none">
+    <div>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+        ElvisChan <br>
+    </div>
+</body>
+</html>

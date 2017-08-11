@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>缓动动画</title>
+    <style>
+        .box {
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            background: #48bfde;
+        }
+    </style>
+</head>
+<body>
+    <button>动画</button>
+    <div class="box"></div>
+</body>
+<script src="动画封装.js">
+</script>
+<script>
+    var target =400;
+    var btn = document.getElementsByTagName("button")[0];
+    var box = document.getElementsByTagName("div")[0];
+
+    btn.onclick = function(){
+        slow(box,target);
+    }
+
+
+
+
+</script>
+</html>

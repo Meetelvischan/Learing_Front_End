@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scroll</title>
+    <style>
+        body {
+            height: 5000px;
+            background: rgba(0,0,0,0.8);
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background: #48bfde;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        Hello World!
+        Hello World!
+        Hello World!
+        Hello World!
+        Hello World!
+        Hello World!
+        Hello World!
+    </div>
+</body>
+<script>
+    var div = document.getElementsByTagName("div")[0];
+    console.log(div.scrollHeight);
+    console.log(div.scrollWidth);
+
+    window.onscroll = function(){
+        document.title = document.body.scrollTop;
+    }
+</script>
+</html>
