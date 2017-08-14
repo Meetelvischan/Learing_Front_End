@@ -21,17 +21,22 @@
             font:400 20px/30px "microsoft yahei";
         }
     </style>
+    <script src="../test/animation.js"></script>
     <script src="../动画封装.js"></script>
     <script src="封装scroll.js"></script>
     <script>
         var imgArr = document.getElementsByTagName("img");
+//        window.onscroll = function(){
+//            var val = scroll().top;
+//
+//            slowTop(imgArr[1],val+80);
+//            slowTop(imgArr[0],val+80);
+//
+//
+//        }
         window.onscroll = function(){
-            var val = scroll().top;
-
-            slowTop(imgArr[1],val+80);
-            slowTop(imgArr[0],val+80);
-
-
+            slowT2B(imgArr[0],scroll().top+80);
+            slowT2B(imgArr[1],scroll().top+80);
         }
     </script>
 </head>

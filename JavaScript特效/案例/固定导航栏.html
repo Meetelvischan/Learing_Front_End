@@ -26,15 +26,16 @@
             var middleDiv = document.getElementById("Q-nav");
             var mainDiv = document.getElementById("main");
 
-            window.onscroll = function() {
-                if (scroll().top > height) {
+            window.onscroll = function(){
+                if(scroll().top>height){
                     middleDiv.className = "fixed";
-                    mainDiv.style.paddingTop = middleDiv.offsetHeight + "px";
-                } else {
+                    mainDiv.style.paddingTop = middleDiv.offsetHeight+"px";
+                }else {
                     middleDiv.className = "";
                     mainDiv.style.paddingTop = 0;
                 }
             }
+
 
 
 
