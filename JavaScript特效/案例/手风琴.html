@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        div {
+            width: 1150px;
+            height: 430px;
+            margin:50px auto;
+            border: 1px solid #dadada;
+            overflow: hidden;
+        }
+        div li {
+            width: 240px;
+            height: 430px;
+            float: left;
+        }
+        div ul {
+            width: 1200px;
+            list-style-type:none;
+
+        }
+    </style>
+    <script src="../animate.js"></script>
+    <script>
+        window.onload = function(){
+            var div = document.getElementsByTagName("div")[0];
+            var ul = document.getElementsByTagName("ul")[0];
+            var liArr = ul.children;
+            for(var i=0;i<liArr.length;i++){
+                liArr[i].style.background = "url(images/"+(i+1)+".jpg) no-repeat"
+                liArr[i].onmouseover = function(){
+                    for(var j=0;j<liArr.length;j++){
+                        animate(liArr[j],{"width":100})
+                    }
+                    animate(this,{"width":800})
+                };
+                div.onmouseout = function(){
+                    for(var j=0;j<liArr.length;j++){
+                        animate(liArr[j],{"width":240})
+                    }
+                }
+
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -52,3 +52,19 @@ function slowTop(ele,target){
     },20);
 }
 
+function show(ele){
+    ele.style.display = "block";
+}
+
+function hide(ele){
+    ele.style.display = "none";
+}
+
+function scroll(){
+    return {
+        "left":window.pageXOffset||document.documentElement.scrollLeft||document.body.scrollLeft,
+        "top":window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop,
+    }
+}
+
+

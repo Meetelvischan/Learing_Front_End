@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标跟随</title>
+    <style>
+        img {
+            width: 36px;
+            height: 65px;
+            position: absolute;
+
+
+        }
+    </style>
+</head>
+<body>
+    <img src="images/Top.jpg" alt="">
+</body>
+<script>
+//    <!--需求：点击页面任何地方，图片跟随-->
+    var img = document.getElementsByTagName("img")[0];
+    var timer = null;
+    var leadery =0; var targety = 0;
+    var leaderx =0; var targetx = 0;
+
+
+    document.onclick = function(event){
+        event = event ||window.event;
+        var pagey = event.pageY || scroll().top + event.clientY;
+        var pagex = event.pageX || scroll().top + event.clientX;
+        targety = pagey;
+        targetx = pagex;
+        clearInterval(timer);
+        timer = setInterval(function(){
+            var stepy = (targety - leadery)/10;
+            var stepx = (targetx - leaderx)/10;
+            stepy = stepy>0?Math.ceil(stepy):Math.floor(stepy);
+            stepx = stepx>0?Math.ceil(stepx):Math.floor(stepx);
+            leadery +=stepy;
+            leaderx +=stepx;
+
+            img.style.top = leadery +"px";
+            img.style.left = leaderx +"px";
+            if(Math.abs(targety-img.offsetTop)<=Math.abs(stepy)&&Math.abs(targetx-img.offsetLeft)<=Math.abs(stepx)){
+                img.style.top = targety +"px";
+                img.style.left = targetx +"px"
+                clearInterval(timer);
+            }
+
+        },25)
+    }
+</script>
+</html>

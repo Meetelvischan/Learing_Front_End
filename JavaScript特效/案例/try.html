@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>try</title>
+    <style>
+        body,html {
+            height: 100%;
+            width: 100%;
+        }
+        * {
+            margin:0;
+            padding:0;
+        }
+        ul {
+            list-style-type:none;
+            height: 100%;
+            width: 100%;
+        }
+        ul li {
+            height: 100%;
+            width: 100%;
+        }
+
+        ol {
+            list-style-type:none;
+            position: fixed;
+            left:20px;
+            top:30%;
+        }
+
+        ol li {
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            background: #48bfde;
+            margin:10px;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+        }
+        .current {
+            background: rgba(255,255,255,0.9);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+    </ul>
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+
+</body>
+<script src="封装scroll.js"></script>
+<script>
+    var color = ["#3399CC","#003366","#0099CC","#FFCCCC","#66CC99"];
+    var ul = document.getElementsByTagName("ul")[0];
+    var ol = document.getElementsByTagName("ol")[0];
+    var ulLiArr = ul.children;
+    var olLiArr = ol.children;
+    var target =0;
+    var leader = 0;
+    var timer = null;
+
+    for(var i=0;i<olLiArr.length;i++){
+        olLiArr[i].index = i;
+        ulLiArr[i].style.backgroundColor = color[i];
+        olLiArr[i].onclick = function(){
+            target = ulLiArr[this.index].offsetTop;
+            for(var j=0;j<olLiArr.length;j++){
+                olLiArr[j].className = "";
+            }
+            this.className = "current";
+            clearInterval(timer);
+            timer = setInterval(function(){
+                var step = (target-leader)/10;
+                step = step>0?Math.ceil(step):Math.floor(step);
+                leader +=step;
+                window.scrollTo(0,leader);
+                if(Math.abs(target-leader)<=Math.abs(step)){
+                    window.scrollTo(0,target);
+                    clearInterval(timer);
+                }
+            },25)
+        }
+    }
+    window.onscroll = function(){
+        leader = scroll().top;
+
+
+
+    }
+
+
+</script>
+
+</html>

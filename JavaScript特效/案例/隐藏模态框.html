@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隐藏模态框</title>
+    <style>
+        body,html {
+            height: 100%;
+            padding:0;
+            margin:0;
+
+        }
+        .mask {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top:0;
+            left:0;
+            background: rgba(0,0,0,0.5);
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+            display: none;
+
+        }
+        .login {
+            width: 400px;
+            height: 300px;
+            cursor: pointer;
+            background: #fff;
+            margin:200px auto;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mask">
+        <div class="login" id="login"></div>
+    </div>
+    <a href="#">注册</a>
+    <a href="#">登录</a>
+</body>
+<script>
+//    点击登录按钮，显示模态框，点击除login外的所有盒子隐藏模态框
+    var mask = document.getElementsByTagName("div")[0];
+    var a = document.getElementsByTagName("a")[1];
+    a.onclick = function(event){
+        show(mask);
+        event = event || window.event;
+        if(event &&event.stopPropagation){
+            event.stopPropagation();
+        }else{
+            event.cancelBubble = true;
+        }
+
+    };
+
+
+    function show(ele){
+        ele.style.display = "block";
+    }
+    document.onclick = function(event){
+        event = event||window.event;
+        var aim = event.target;
+        console.log(event.target);
+
+        if(aim.id !=="login"){
+            mask.style.display = "none";
+        }
+
+    }
+
+
+</script>
+</html>

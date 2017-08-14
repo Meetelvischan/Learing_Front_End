@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        .box {
+            width: 350px;
+            height: 350px;
+            margin:100px;
+            border: 1px solid #dadada;
+            position: relative;
+        }
+        .small {
+            position: relative;
+        }
+        .mask {
+            width: 175px;
+            height: 175px;
+            background: rgba(255,255,0,0.4);
+            position: absolute;
+            top:0;
+            left:0;
+            cursor: move;
+
+        }
+        .big {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top:0;
+            left:360px;
+            border: 1px solid #dadada;
+            overflow: hidden;
+
+        }
+
+    </style>
+    <script src="../动画封装.js"></script>
+    <script>
+        window.onload = function(){
+            var box = document.getElementsByTagName("div")[0];
+            var small = box.children[0];
+            var big = box.children[1];
+            var mask = small.children[1];
+            var bigImg = big.children[0];
+
+
+            small.onmouseenter = function(){
+                show(mask);
+                show(big);
+            };
+
+            small.onmouseleave = function(){
+                hide(mask);
+                hide(big);
+            };
+            small.onmousemove = function(event){
+                event = event ||window.event;
+                var pagex = event.pageX ||scroll().left +event.clientX;
+                var pagey = event.pageY ||scroll().top +event.clientY;
+
+                var x = pagex -box.offsetLeft-mask.offsetWidth/2;
+                var y = pagey -box.offsetTop-mask.offsetHeight/2;
+                //                限制小盒子范围
+                if(x<0){
+                    x =0;
+                }
+                if(x>small.offsetWidth-mask.offsetWidth){
+                    x = small.offsetWidth-mask.offsetWidth;
+                }
+                if(y<0){
+                    y =0;
+                }
+                if(y>small.offsetHeight-mask.offsetHeight){
+                    y = small.offsetHeight-mask.offsetHeight;
+                }
+                console.log(x + "\t"+y);
+
+                mask.style.left = x +"px";
+                mask.style.top = y +"px";
+
+//                大图片走的距离/mask走的距离 = (大图片-大盒子)/(小图片-mask)；
+//                或大图片走的距离/mask走的距离=大图片/小图片;
+                var bili =(bigImg.offsetWidth-big.offsetWidth)/(small.offsetWidth-mask.offsetWidth);
+                var xx =bili*x;
+                var yy =bili*y;
+
+                bigImg.style.marginTop = -yy+"px";
+                bigImg.style.marginLeft = -xx+"px";
+
+
+
+
+
+
+
+
+            }
+
+        }
+    </script>
+</head>
+
+
+<body>
+    <div class="box">
+        <div class="small">
+            <img src="images/001.jpg" alt="">
+            <div class="mask" style="display: none"></div>
+        </div>
+        <div class="big" style="display: none">
+            <img src="images/0001.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>
