@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+    <style>
+        * {
+            padding:0;
+            margin:0;
+        }
+        ul {
+            list-style-type:none;
+            width: 200px;
+            margin: 100px auto;
+            text-align: center;
+
+        }
+        li {
+
+        }
+        span {
+            display: inline-block;
+            width: 200px;
+            cursor: pointer;
+            background: #48bfde;
+            color: #ffffff;
+
+
+        }
+        div {
+            display: none;
+            background: #00a5de;
+            height: 200px;
+            color: #ffffff;
+        }
+
+    </style>
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+        $(function(){
+            $("span").click(function(){
+                $(this).css("border-radius","10px 10px 0 0");
+                $(this).next().show(350);
+                $(this).parent().siblings().find("div").hide(350);
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul class="parentWrap">
+        <li class="menuItems">
+            <span class="groupTitle">标题1</span>
+            <div>我是div1</div>
+        </li>
+        <li class="menuItems">
+            <span class="groupTitle">标题2</span>
+            <div>我是div2</div>
+        </li>
+        <li class="menuItems">
+            <span class="groupTitle">标题3</span>
+            <div>我是div3</div>
+        </li>
+        <li class="menuItems">
+            <span class="groupTitle">标题4</span>
+            <div>我是div4</div>
+        </li>
+
+
+    </ul>
+</body>
+</html>

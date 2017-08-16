@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>突出显示</title>
+    <style>
+        ul,li,img,a {
+            padding:0;
+            margin:0;
+        }
+        body {
+            background: rgba(0,0,0,0.8);
+        }
+        div.wrap {
+            width: 622px;
+            height: 394px;
+            background: #dadada;
+            overflow: hidden;
+            margin: 100px auto 0;
+        }
+        .wrap ul {
+            list-style-type:none;
+            width: 622px;
+            height: 394px;
+            padding:0;
+            margin:0;
+            text-align: center;
+            
+
+
+        }
+        .wrap li {
+            float: left;
+            margin:5px 0 0 5px;
+        }
+    </style>
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+        $(function(){
+            $("li").mouseenter(function(){
+                $(this).css("opacity",1)
+                    .siblings().css("opacity",0.5);
+            })
+                .click(function(){
+                alert();
+                });
+            $("div").mouseleave(function(){
+                $("li").css("opacity",1);
+            });
+
+        })
+    </script>
+
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li><a href="#"><img src="images/01.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/01.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/03.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/04.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/05.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/06.jpg" alt=""></a></li>
+        </ul>
+    </div>
+</body>
+</html>
