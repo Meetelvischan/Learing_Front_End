@@ -24,14 +24,17 @@
             cursor: pointer;
             background: #48bfde;
             color: #ffffff;
-
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 1px 5px 0 rgba(0,0,0,0.5);
 
         }
         div {
             display: none;
-            background: #00a5de;
+            background: #f1fffd;
             height: 200px;
-            color: #ffffff;
+            color: #dadada;
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3)
+
         }
 
     </style>
@@ -39,7 +42,7 @@
     <script>
         $(function(){
             $("span").click(function(){
-                $(this).css("border-radius","10px 10px 0 0");
+                $(this).siblings().css("border-radius","0");
                 $(this).next().show(350);
                 $(this).parent().siblings().find("div").hide(350);
             })

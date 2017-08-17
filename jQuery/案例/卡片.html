@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>卡片</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        div.card {
+            margin: 100px auto;
+            height: 400px;
+            width: 300px;
+            border: 1px solid #dadada;
+            border-radius: 10px;
+            box-shadow: 0 3px 5px 0 rgba(0,0,0,0.3);
+            position: relative;
+        }
+        div.title {
+            background: #00a5de;
+            border-radius: 9px 9px 0 0;
+            border: 1px solid #00a5de;
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3);
+            color:#fff;
+            text-align: center;
+            position: relative;
+        }
+        .close span {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            color: #fff;
+            background: #f36a8a;
+            font: 700 17px/17px "microsoft yahei";
+            top:3px;
+            right:3px;
+            border-radius: 10px;
+            cursor: pointer;
+
+        }
+        div.des {
+            position: absolute;
+            width: 300px;
+            height: 50px;
+            background: #48bfde;
+            bottom:-1px;
+            left:-1px;
+            border-radius: 0 0 9px 9px;
+            border: 1px solid #48bfde;
+            display: none;
+            opacity:0.8;
+
+
+        }
+        div.content {
+            height: 375px;
+            width: 300px;
+        }
+    </style>
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+        $(function(){
+            $(".close span").click(function(){
+                $(".card").fadeOut(350);
+            });
+            $("div.main").mouseover(function(){
+                $(".des").fadeIn(350);
+            }).mouseleave(function(){
+                $(".des").fadeOut(350);
+            })
+        })
+    </script>
+
+</head>
+<body>
+    <div class="card">
+        <div class="title">
+            <h3>标题</h3>
+            <div class="close">
+                <span>x</span>
+            </div>
+        </div>
+        <div class="main">
+            <div class="content"></div>
+            <div class="des"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background: #48bfde;
+            position: absolute;
+            top:50px;
+            left:100px;
+
+
+
+
+        }
+    </style>
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+        var json1 = {"width":400,"height":400,"top":100,"left":500};
+        $(function(){
+            $("button").eq(0).click(function(){
+                $("#box").animate(json1,500)
+            });
+
+        })
+    </script>
+</head>
+<body>
+    <button>动画</button>
+    <div id="box"></div>
+</body>
+</html>

@@ -37,19 +37,16 @@
 
 * 基本选择器
 
-  
 
   
 
 * 层级选择器
 
-  
 
   
 
 * 基本过滤选择器
 
-  
 
 * 筛选选择器
 
@@ -61,3 +58,32 @@
 | parent()   | 获取元素的父元素      |
 | eq(index)  | 获取指定索引值的元素    |
 
+
+
+### jQuery DOM操作
+
+
+
+
+
+
+
+
+
+
+
+###jQuery动画
+
+* **显示隐藏**
+
+| show/hide()方法          | 说明                                    |
+| ---------------------- | ------------------------------------- |
+| show()                 | 显示动画(通过display实现)                     |
+| hide()                 | 隐藏动画(通过display实现)                     |
+| show(毫秒值)              | 显示动画(通过width,height,opcity和display实现) |
+| hide(毫秒值)              | 隐藏动画(通过width,height,opcity和display实现) |
+| show(slow/normal/fast) | slow:600ms ;normal:400ms; fast:200ms  |
+| show/hide(毫秒值,回调函数)    | 动画执行后执行回调函数                           |
+| toggle()               | 在显示隐藏之间切换(同样有四种参数设置)                  |
+
+* ​
