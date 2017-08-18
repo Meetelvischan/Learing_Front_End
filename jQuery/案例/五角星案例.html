@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>五角星案例</title>
+    <style>
+        ul {
+            list-style-type:none;
+        }
+        .comment li {
+            float: left;
+            font-size: 40px;
+            color: #48bfde;
+            cursor: pointer;
+        }
+        li.current {
+            float: left;
+            font-size: 40px;
+            color: #48bfde;
+            cursor: pointer;
+        }
+
+    </style>
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+        $(function(){
+            var star_none = "☆";
+            var star_solid = "★";
+            var $li =$(".comment li");
+
+
+            $li.on("mouseenter",function(){
+                $(this).text(star_solid).prevAll("li").text(star_solid).end()
+                    .nextAll().text(star_none);
+            });
+            $li.on("mouseleave",function(){
+                if($("li.current").length===0){
+                    $li.text(star_none);
+                }else{
+                    $("li.current").text(star_solid).prevAll().text(star_solid).end()
+                        .nextAll().text(star_none);
+                }
+
+            });
+            $li.on("click",function() {
+                $(this).addClass("current").siblings().removeClass();
+
+
+            })
+
+
+
+        })
+    </script>
+
+</head>
+<body>
+    <ul class="comment">
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+    </ul>
+</body>
+</html>

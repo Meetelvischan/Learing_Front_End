@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态输入</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        .wrap {
+            width: 800px;
+            margin: 100px auto;
+        }
+        #inValue {
+            padding:5px;
+
+        }
+        .typed-cursor {
+            opacity: 1;
+            -webkit-animation: blink .7s infinite;
+            -moz-animation: blink .7s infinite;
+            animation:blink .7s infinite;
+
+
+        }
+    </style>
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+        $(function(){
+            var str = "Yesterday you said tomorrow"
+            var arr = str.split("");
+            var str2 ="";
+            var num =0;
+            var $word = $(".word");
+            $(".typed-cursor").show();
+            var timer = setInterval(function(){
+               str2 +=arr[num];
+                $word.text(str2);
+                num++;
+                if($word.text().length===arr.length){
+                    clearInterval(timer);
+                }
+            },200);
+        })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h1>You want to say : <span class="word"></span><span class="typed-cursor">|</span>
+        </h1>
+        <div class="say-section">
+            <input type="text" id="inValue" class="txSay">
+            <input type="button" value="Say" id="btnSay" class="btnSay">
+        </div>
+    </div>
+</body>
+</html>
