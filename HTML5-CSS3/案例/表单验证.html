@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+    <style>
+        fieldset {
+            width: 100%;
+            max-width:900px;
+            min-width:400px;
+            margin: 0 auto;
+            font:400 14px "microsoft yahei";
+        }
+        input,meter {
+            width: 100%;
+            margin: 10px 0;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>表单</legend>
+            <label>
+                用户名: <br><input type="text" id="username">
+            </label><br>
+
+            <label>
+                密码: <br><input type="password" id="pwd">
+            </label><br>
+            <label>
+                性别: <br><input type="text" id="sex" list="gender">
+            </label><br>
+            <datalist id="gender">
+                <option>男</option>
+                <option>女</option>
+            </datalist>
+            <label>
+                密码强度: <br> <meter value="50" max="100"></meter>
+            </label><br>
+        </fieldset>
+    </form>
+</body>
+</html>

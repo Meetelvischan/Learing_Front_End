@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+    <style>
+        * {
+            padding:0;
+            margin:0;
+        }
+        body {
+            background: #dadada;
+        }
+        div {
+            width: 400px;
+            margin: 50px auto;
+            background: #FFFFFF;
+            font:400 14px "microsoft yahei";
+            border: 1px solid #dadada;
+        }
+        nav {
+            height: 30px;
+            line-height:30px;
+            overflow: hidden;
+        }
+        nav a {
+            display: block;
+            float: left;
+            width: 100px;
+            height: 30px;
+            background: #48bfde;
+            font:700 16px/30px "microsoft yahei";
+            text-align: center;
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+        nav a.active {
+            background: #f36a8a;
+        }
+
+        .cont {
+            overflow: hidden;
+            display: none;
+        }
+        .cont ol {
+            list-style-type: none;
+            line-height: 30px;
+        }
+    </style>
+    <script>
+        window.onload= function(){
+            var links = document.querySelectorAll("nav a");
+            for(var i=0;i<links.length;i++){
+                links[i].onclick = function(){
+                    var currentNav = document.querySelector(".active");
+                    currentNav.classList.remove("active");
+                    var currentId = currentNav.dataset["cont"];
+                    document.querySelector("#"+currentId).style.display = "none";
+                    this.classList.add("active");
+                    var myId = this.dataset["cont"];
+                    document.querySelector("#"+myId).style.display = "block";
+
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <nav>
+            <a class="active" href="javascript:;" data-cont="local">国内新闻</a>
+            <a href="javascript:;" data-cont="global">国际新闻</a>
+            <a href="javascript:;" data-cont="sports">体育新闻</a>
+            <a href="javascript:;" data-cont="funny">娱乐新闻</a>
+        </nav>
+        <section class="cont" id="local">
+            <ol>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+            </ol>
+        </section>
+        <section class="cont" id="global">
+            <ol>
+                <li>1234</li>
+                <li>223</li>
+                <li>34</li>
+                <li>435</li>
+                <li>553</li>
+                <li>653</li>
+                <li>75</li>
+            </ol>
+        </section>
+        <section class="cont" id="sports">
+            <ol>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+            </ol>
+        </section>
+        <section class="cont" id="funny">
+            <ol>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+            </ol>
+        </section>
+    </div>
+</body>
+</html>
