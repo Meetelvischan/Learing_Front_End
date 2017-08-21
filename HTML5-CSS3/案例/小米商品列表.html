@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米</title>
+    <style>
+        body {
+            background: #eee;
+        }
+        .items {
+            width: 1280px;
+            margin: 100px auto;
+
+        }
+        .item {
+            float: left;
+            width: 234px;
+            height: 300px;
+            background: #fff;
+            margin-right:20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.7s;
+
+        }
+        .item span {
+            position: absolute;
+            width: 100%;
+            height: 80px;
+            background: #48bfde;
+            left:0;
+            bottom: -80px;
+            transition:all 0.5s;
+        }
+        .item:hover span {
+            bottom: 0;
+        }
+        .item:hover {
+            box-shadow: 0 5px 10px 0 rgba(0,0,0,0.3);
+            margin-top: -5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="items">
+        <div class="item">
+            <img src="images/1.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="images/2.jpg" alt="">
+            <span></span>
+        </div>
+        <div class="item">
+            <img src="images/3.jpg" alt="">
+            <span></span>
+        </div>
+        <div class="item">
+            <img src="images/4.jpg" alt="">
+            <span></span>
+        </div>
+        <div class="item">
+            <img src="images/5.jpg" alt="">
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>

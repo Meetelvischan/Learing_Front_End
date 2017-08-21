@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边框案例</title>
+    <style>
+        .items {
+            width: 1240px;
+            margin: 100px auto;
+        }
+        .item {
+            width: 224px;
+            float: left;
+            border: 1px solid #dadada;
+            margin-right: 10px;
+            box-shadow: 0 1px 5px 0 rgba(0,0,0,0.3);
+        }
+        .pic {
+            width: 224px;
+            height: 112px;
+            position: relative;
+        }
+        .pic>img {
+            width: 100%;
+
+        }
+        .pic a img {
+            width: 80px;
+            height: 80px;
+            border: 5px solid #fff;
+            border-radius: 50%;
+            position: absolute;
+            top:110px;
+            left: 50%;
+            margin-left: -40px;
+        }
+        .content {
+            width: 224px;
+            height: 140px;
+        }
+    </style>
+</head>
+<body>
+    <div class="items">
+        <div class="item">
+            <div class="pic">
+                <img src="images/item_1.jpg" alt="">
+                <a href="#">
+                    <img src="images/logo_1.jpg" alt="">
+                </a>
+            </div>
+            <div class="content"></div>
+        </div>
+
+        <div class="item">
+            <div class="pic">
+                <img src="images/item_2.jpg" alt="">
+                <a href="#">
+                    <img src="images/logo_2.jpg" alt="">
+                </a>
+            </div>
+            <div class="content"></div>
+        </div>
+
+        <div class="item">
+            <div class="pic">
+                <img src="images/item_3.jpg" alt="">
+                <a href="#">
+                    <img src="images/logo_3.jpg" alt="">
+                </a>
+            </div>
+            <div class="content"></div>
+        </div>
+
+        <div class="item">
+            <div class="pic">
+                <img src="images/item_4.jpg" alt="">
+                <a href="#">
+                    <img src="images/logo_4.jpg" alt="">
+                </a>
+            </div>
+            <div class="content"></div>
+        </div>
+
+        <div class="item">
+            <div class="pic">
+                <img src="images/item_5.jpg" alt="">
+                <a href="#">
+                    <img src="images/logo_5.jpg" alt="">
+                </a>
+            </div>
+            <div class="content"></div>
+        </div>
+    </div>
+</body>
+</html>

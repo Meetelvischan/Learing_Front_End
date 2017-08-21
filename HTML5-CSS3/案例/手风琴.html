@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+    <style>
+        .items {
+            width: 400px;
+            margin: 100px auto;
+        }
+        .item {
+            width: 100%;
+            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.3);
+            background: #c9e5e8;
+        }
+        h3 {
+            border-radius:10px 10px 0 0;
+        }
+        .item:nth-last-child(-n+3) {
+            border-top: 1px solid #c9e5e8;
+        }
+        .item h3 {
+            display: block;
+            width: 100%;
+            height: 30px;
+            margin:0;
+            padding:0;
+            background: #6ec3c8;
+            color: #FFFFFF;
+            line-height: 30px;
+            text-align: center;
+
+
+        }
+        .item .content {
+            height:0;
+            background: #c9e5e8;
+            transition: all 0.7s;
+        }
+        .item h3 {
+            transition: all 0.8s;
+        }
+        .item:hover h3 {
+            background: #00949a;
+            border-top: 3px solid #c9e5e8;
+        }
+        .item:hover .content {
+            height: 150px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="items">
+        <div class="item">
+            <h3>新闻</h3>
+            <div class="content"></div>
+        </div>
+        <div class="item">
+            <h3>新闻</h3>
+            <div class="content"></div>
+        </div>
+        <div class="item">
+            <h3>新闻</h3>
+            <div class="content"></div>
+        </div>
+        <div class="item">
+            <h3>新闻</h3>
+            <div class="content"></div>
+        </div>
+    </div>
+</body>
+</html>
