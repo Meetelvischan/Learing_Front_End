@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航栏</title>
+    <style>
+        * {
+            padding:0;
+            margin:0;
+        }
+        ul {
+            list-style-type: none;
+            width: 600px;
+            margin: 100px auto;
+        }
+        ul li {
+            float: left;
+            position: relative;
+            width: 120px;
+            height: 40px;
+            transform-style: preserve-3d;
+            transition: all 0.5s;
+        }
+        li span {
+            width: 100%;
+            height: 100%;
+            line-height:40px;
+            position: absolute;
+            top:0;
+            left:0;
+            text-align: center;
+            color: #FFFFFF;
+            background: #48bfde;
+
+        }
+        li span:nth-child(1) {
+            background: #00949a;
+            transform:translateZ(20px);
+        }
+        li span:nth-child(2) {
+            background: #f36a8a;
+            transform: rotateX(90deg) translateZ(20px);
+        }
+
+        ul:hover li {
+            transform: rotateX(-90deg);
+        }
+        li:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+        li:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+        li:nth-child(4) {
+            transition-delay: 0.3s;
+        }
+        li:nth-child(5) {
+            transition-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <span>Elvis</span>
+            <span>Chan</span>
+        </li>
+        <li>
+            <span>Elvis</span>
+            <span>Chan</span>
+        </li>
+        <li>
+            <span>Elvis</span>
+            <span>Chan</span>
+        </li>
+        <li>
+            <span>Elvis</span>
+            <span>Chan</span>
+        </li>
+        <li>
+            <span>Elvis</span>
+            <span>Chan</span>
+        </li>
+    </ul>
+</body>
+</html>

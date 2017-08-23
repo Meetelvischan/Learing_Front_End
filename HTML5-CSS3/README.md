@@ -259,6 +259,64 @@ border-radius:
 * transform: translate(水平px,垂直px) 移动元素
 * transform:rotate(度数deg) 旋转元素
 
+
+
+### 3D动画
+
+* rotateX(度数) -- 沿着x轴转动
+* rotateY(度数) -- 沿着y轴转动
+* rotateZ度数) -- 沿着z轴转动
+* translateX(距离) -- 沿着x轴移动指定的距离
+* translateY(距离) -- 沿着y轴移动指定的距离
+* translateXZ距离) -- 沿着z轴移动指定的距离(必须配合透视使用)
+
+
+* perspective:(距眼睛的距离) --透视
+* skew(水平度数,垂直度数) --倾斜
+
+
+
+
+### 动画
+
+```css
+//定义动画
+@keyframes 动画名{
+  from{初始状态}
+  to{结束状态}
+}
+//调用动画
+animation:动画名 持续时间 动画次数(infinite无限次) alternate(是否反向) 运动曲线 延迟执行时间
+
+//定义多组动画
+@keyframes 动画名 {
+  0%{  }
+  25%{  }
+  50%{  }
+  75%{  }
+  100%{  }
+}
+```
+
+
+
+| 动画属性                      | 说明                                       |
+| ------------------------- | ---------------------------------------- |
+| animation-name            | 动画名(必须)                                  |
+| animation-duration        | 动画持续时间(必须)                               |
+| animation-iteration-count | 动画执行次数(infinite无限次)                      |
+| animation-direction       | 动画执行反向(alternate反向)                      |
+| animation-delay           | 动画延迟执行                                   |
+| animation-fill-mode       | 设置动画执行结束后的状态(forwards:保持动画结束后的状态; backwards:回到开始时状态) |
+| animation-timing-function | 运动曲线(linear线性;ease-in:加速;ease-out减速;ease-in-out:先加速后减速) **step():动画分多少步完成** |
+
+
+
+
+
+
+
+
 ### 概念地图
 
 * 混合式开发
