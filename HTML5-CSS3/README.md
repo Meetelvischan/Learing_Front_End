@@ -268,7 +268,7 @@ border-radius:
 * rotateZ度数) -- 沿着z轴转动
 * translateX(距离) -- 沿着x轴移动指定的距离
 * translateY(距离) -- 沿着y轴移动指定的距离
-* translateXZ距离) -- 沿着z轴移动指定的距离(必须配合透视使用)
+* translateZ(距离) -- 沿着z轴移动指定的距离(必须配合透视使用)
 
 
 * perspective:(距眼睛的距离) --透视
@@ -312,6 +312,62 @@ animation:动画名 持续时间 动画次数(infinite无限次) alternate(是�
 
 
 
+### 伸缩布局
+
+| 属性                                       | 说明                          |
+| ---------------------------------------- | --------------------------- |
+| display:flex                             | 设置伸缩布局                      |
+| flex-direction:row/row-reverse/column/column-reverse | 水平/水平反转/垂直/垂直反转/            |
+| justify-content:flex-start/flex-end/flex/center/space-round/space-between | 主轴对齐方式:左对齐/右对齐/居中对齐/环绕/两端对齐 |
+| align-items:flex-start/flex-end/center/baseline | 侧轴对齐:起点对齐/终点对齐/居中对齐/基线对齐/拉伸 |
+| flex                                     | 伸缩比例                        |
+
+
+
+
+
+### Web存储
+
+| 存储                    | 说明              |
+| --------------------- | --------------- |
+| window.sessionStorage | (生命周期到关闭浏览器窗口时) |
+| window.localStorage   | (永久生效,除非清除)     |
+
+| 用法                                       | 说明           |
+| ---------------------------------------- | ------------ |
+| window.sessionStorage.setItem("key",value) | 设置session    |
+| window.sessionStorage.getItem("key")     | 获取session    |
+| window.sessionStorage.remove("key")      | 删除选定的session |
+| window.sessionStorage.clear()            | 清空session    |
+
+
+
+### 应用缓存
+
+* 新建一个xx.appcache文件
+
+  ```appcache
+  CACHE MANIFEST
+
+  CHACHE:
+  #要缓存的文件地址
+  	http:www.xx.com/img.jpeg
+  NETWORK:
+  #要联网才能访问的文件
+  FALLBACK:
+  #当当前页面无法访问时回退的页面
+  	404.html
+  ```
+
+* 在html中引用
+
+
+  ```html
+<html manifest="xxx.appcache">
+</html>
+  ```
+
+  ​
 
 
 

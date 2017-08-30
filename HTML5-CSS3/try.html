@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>try</title>
+    <style>
+        * {
+            padding:0;
+            margin:0;
+        }
+        body {
+            height: 100%;
+            background: #dadada;
+        }
+        .nav {
+            width: 150px;
+            height: 100%;
+            position: absolute;
+            top:0;
+            left:0;
+            background: #3175b4;
+            border-radius: 0 2px 2px 0;
+            box-shadow: 0 5px 7px 0 rgba(0,0,0,0.6);
+
+        }
+        .box {
+            width: 400px;
+            height: 200px;
+            margin:20px auto;
+            border-radius: 20px;
+            background-image: linear-gradient( 135deg, #2AFADF 10%, #4C83FF 100%);
+            box-shadow: 0 4px 6px 0 rgba(0,0,0,0.3);
+            position: relative;
+        }
+        .close {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            border-radius: 50%;
+            background: #FFFFFF;
+            opacity:0.6;
+            top:10px;
+            right:10px;
+            color: #00a5de;
+            text-align: center;
+            font:700 12px/20px "microsoft yahei";
+            cursor: pointer;
+            transition: all 1s;
+        }
+        .close:hover {
+            transform: rotate(180deg);
+
+        }
+        .card {
+            width: 150px;
+            height: 100px;
+            background: #fff;
+            margin:0 auto;
+            border-radius: 10px;
+            box-shadow: 0 1px 5px 0 rgba(0,0,0,0.4);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav"></div>
+    <div class="box">
+        <div class="close">X</div>
+    </div>
+    <div class="card"></div>
+</body>
+</html>

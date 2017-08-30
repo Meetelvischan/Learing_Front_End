@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字体</title>
+    <style>
+        @font-face {font-family: 'webfont';
+            src: url('案例/font/webfont.eot'); /* IE9*/
+            src: url('案例/font/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('案例/font/webfont.woff') format('woff'), /* chrome、firefox */
+            url('案例/font/webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('案例/font/webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+        }
+        .web-font {
+            font-family:"webfont" !important;
+            font-size:20px;
+            font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        @font-face {font-family: 'iconfont';
+            src: url('案例/font/iconfont.eot'); /* IE9*/
+            src: url('案例/font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('案例/font/iconfont.woff') format('woff'), /* chrome、firefox */
+            url('案例/font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('案例/font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+        }
+        div {
+            margin:20px auto;
+            border: 1px solid #dadada;
+            text-align: center;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:20px;
+            font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .icon p:hover{
+            color: #00a5de;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="font">
+        <p class="web-font">前端高手之路</p>
+    </div>
+    <div class="icon">
+        <p class="iconfont">&#xe628;&nbsp&#xe67c;</p>
+    </div>
+</body>
+</html>

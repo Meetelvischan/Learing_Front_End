@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        .one {
+            width: 300px;
+            height: 300px;
+            background: #00a5de;
+            position: absolute;
+            left:300px;
+            top:100px;
+            box-shadow: 0 3px 15px 0 rgba(0,0,0,0.5);
+        }
+        .two {
+            width: 300px;
+            height: 300px;
+            background: #00949a;
+            position: absolute;
+            top: 100px;
+            right:300px;
+            box-shadow: 0 3px 15px 0 rgba(0,0,0,0.5);
+        }
+        span {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #6ec3c8;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
+            text-align: center;
+            font: 700 20px/50px "microsoft yahei";
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <span draggable="true">1</span>
+        <span draggable="true">2</span>
+        <span draggable="true">3</span>
+        <span draggable="true">4</span>
+
+    </div>
+    <div class="two"></div>
+</body>
+<script>
+    var allSpan = document.querySelectorAll("span");
+    var two = document.querySelector(".two");
+    var temp=null;
+    for(var i=0;i<allSpan.length;i++){
+        allSpan[i].ondragstart = function(){
+            temp = this;
+            console.log(temp);
+        };
+        allSpan[i].dragend = function(){
+            temp = null;
+            console.log(temp);
+        }
+    }
+    two.addEventListener("dragover",function(e){
+        console.log("hover");
+        e.preventDefault();
+    });
+    two.addEventListener("drop",function(){
+        this.appendChild(temp);
+    })
+
+</script>
+</html>
