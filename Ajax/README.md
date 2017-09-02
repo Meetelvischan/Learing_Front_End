@@ -33,7 +33,7 @@
 
 ### Ajax五部曲
 
-####1. 创建异步对象
+#### 1. 创建异步对象
 
 `var ajaxObject = new XMLHttpRequest(); `
 

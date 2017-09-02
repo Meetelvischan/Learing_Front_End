@@ -8,4 +8,7 @@
   * BOM
 * JS特效
 * JQuery
+* Bootstrap
+* Angular
+* Vue
 
